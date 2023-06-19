@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Docker Setup for Running Flutter App</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: #0077b6;
+      margin-top: 30px;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    p, li {
+      margin-bottom: 1rem;
+    }
+
+    code {
+      background-color: #eee;
+      padding: 2px 4px;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+
+    button {
+      font-size: 14px;
+      border: none;
+      background-color: #0077b6;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    button:hover {
+      background-color: #005b8a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Docker Setup for Running Flutter App</h1>
+
+  <h2>Prerequisites</h2>
+  <ul>
+    <li>Your PC and Phone must be on the same network.</li>
+  </ul>
+
+  <h2>Phone Setup</h2>
+  <ol>
+    <li>Connect your phone to your PC through USB Cable.</li>
+    <li>Enable Developer Options on your phone.</li>
+    <li>Go down to Debugging Section:</li>
+    <ul>
+      <li>Enable USB Debugging.</li>
+      <li>Enable Wireless Debugging.</li>
+    </ul>
+  </ol>
+
+  <h2>Docker Setup</h2>
+  <ol>
+    <li>Download and Install Docker Desktop from the <a href="https://www.docker.com/products/docker-desktop/">official website</a>.</li>
+    <li>Run the Docker Daemon.</li>
+  </ol>
+
+  <h2>Laptop/PC Setup</h2>
+  <ol>
+    <li>Download Git from the <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">official website</a>.</li>
+    <li>Open the Windows terminal or any folder where you want to clone the Flutter project.</li>
+    <li>Clone the Flutter project:</li>
+    <ul>
+      <li>Run: <code>git clone https://github.com/ekaantik/ecard-flutter-app.git</code></li>
+      <li>Change directory to the project root: <code>cd ecard-flutter-app</code></li>
+    </ul>
+  </ol>
+
+  <h2>Build Image</h2>
+  <ul>
+    <li>Run: <code>docker build -t parichay-card .</code></li>
+    <li>Be patient as it may take up to 20 minutes.</li>
+  </ul>
+
+  <h2>Run the Container</h2>
+  <p>Run the Docker container with the appropriate phone IP address:</p>
+  <ul>
+    <li>Run: <code>docker run -e PHONE_IP_ADDRESS=&lt;ip_address_of_phone&gt; -it parichay-card</code></li>
+    <li>Replace &lt;ip_address_of_phone&gt; with the IP address of your phone.</li>
+    <li>While running, There will a popup message asking to allow USB Debugging. Click on the Always allow from this Computer option toogle and re-run the above command."</li>
+    <li>Wait for the Gradle Build, It may take 5-10 mins.</li>
+    <li>The app will start running on your phone.</li>
+  </ul>
+
+  <p>Note: When you receive the message "Device connected successfully!" on the terminal, you can unplug the USB cable from the phone.</p>
+</body>
+</html>
