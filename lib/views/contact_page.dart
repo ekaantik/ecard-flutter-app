@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parichay_card/contact_list_view.dart';
+import 'package:parichay_card/widgets/contact_list.dart';
 
 class ContactPage extends StatefulWidget {
   final Map<String, String> commonContactMap;
@@ -11,6 +11,7 @@ class ContactPage extends StatefulWidget {
 class _ContactPageState extends State<ContactPage> {
   @override
   Widget build(BuildContext context) {
+    
     return LayoutBuilder(
       builder: (BuildContext ctx, BoxConstraints constraints) {
         return Scaffold(
@@ -33,7 +34,7 @@ class _ContactPageState extends State<ContactPage> {
                 height: constraints.maxWidth * 0.05, //5%
               ),
               Expanded(
-                  child: ContactListView(
+                  child: ContactList(
                       widget.commonContactMap, constraints, null))
             ],
           ),
