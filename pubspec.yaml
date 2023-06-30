@@ -36,6 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   permission_handler: ^10.2.0
   contacts_service: ^0.6.3
+  flutter_contacts: ^1.1.6
+  url_launcher: ^6.1.11
+  flutter_phone_direct_caller: ^2.1.1
+  phone_call: ^0.0.1
+  fast_contacts: ^3.0.3
 dev_dependencies:
   flutter_test:
     sdk: flutter
